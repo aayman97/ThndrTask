@@ -1,4 +1,4 @@
-# 📈 React Native Ticker Search App
+# 📈 ThndrTask App
 
 This is a React Native application that allows users to **search for stock tickers** and view them in a grid layout.  
 It uses an API function (`getTickers`) to fetch ticker information and displays results in a scrollable list.
