@@ -40,7 +40,7 @@ src/
 
 ```bash
 git clone https://github.com/aayman97/ThndrTask.git
-cd ticker-app
+cd ThndrTask
 ```
 
 ### 2. Install dependencies
