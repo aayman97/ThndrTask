@@ -1,97 +1,116 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📈 React Native Ticker Search App
 
-# Getting Started
+This is a React Native application that allows users to **search for stock tickers** and view them in a grid layout.  
+It uses an API function (`getTickers`) to fetch ticker information and displays results in a scrollable list.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- 🔍 **Search** for tickers by keyword
+- 📊 **Infinite scrolling** – loads more results when reaching the end
+- ⚡ **Fast rendering** with `FlatList`
+- 🎛️ **Reusable components** (`SearchInput`, `TickerCard`)
+- ⏳ **Loading indicators** while fetching data
+- ❌ **Error handling** with alerts and messages
+- 🖼️ **Custom native splash screen** implemented in both iOS and Android
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## 📂 Project Structure
 
-# OR using Yarn
-yarn start
+```
+src/
+ ├── api/
+ │   └── getTickers.ts      # API function to fetch tickers
+ ├── components/
+ │   ├── SearchInput.tsx    # Search input component
+ │   └── TickerCard.tsx     # Card component for displaying a ticker
+ ├── types/
+ │   └── TickerInfo.ts      # Type definition for ticker data
+ └── screens/
+     └── Home.tsx           # Main screen (this file)
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## 🛠️ Installation & Setup
 
-### Android
+### 1. Clone the repository
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```bash
+git clone https://github.com/your-username/ticker-app.git
+cd ticker-app
 ```
 
-### iOS
+### 2. Install dependencies
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+npm install
+# or
+yarn install
 ```
 
-Then, and every time you update your native dependencies, run:
+### 3. iOS setup (Mac only)
 
-```sh
-bundle exec pod install
+```bash
+npx pod-install
+npx react-native run-ios
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### 4. Android setup
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```bash
+npx react-native run-android
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 📖 Usage
 
-## Step 3: Modify your app
+1. Open the app
+2. Enter a **keyword** in the search bar (e.g., `AAPL`, `TSLA`)
+3. View results in a **2-column grid**
+4. Scroll down to **load more tickers**
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 🖼️ Splash Screen
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+This project includes a **custom native splash screen**:
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+- **Android**: Implemented using a `SplashActivity` that runs before the `MainActivity` starts.
+- **iOS**: Implemented using a **Launch Screen Storyboard**.
 
-## Congratulations! :tada:
+This ensures a smooth and native app startup experience on both platforms.
 
-You've successfully run and modified your React Native App. :partying_face:
+---
 
-### Now what?
+## ⚡ Technologies Used
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [FlatList](https://reactnative.dev/docs/flatlist) for optimized rendering
+- [Axios / Fetch API] (depending on how `getTickers` is implemented)
 
-# Troubleshooting
+---
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## 🧪 Testing
 
-# Learn More
+This app is test-ready with `testID` props for components:
 
-To learn more about React Native, take a look at the following resources:
+- `loader` → initial loading spinner
+- `ticker-list` → list of tickers
+- `ticker-card` → individual ticker card
+- `end-loader` → infinite scroll loader
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Use **Jest + React Native Testing Library** to write automated tests.
+
+---
+
+## 📌 Notes
+
+- Make sure your API (`getTickers`) is correctly set up with valid credentials or endpoints
+- If no results appear, double-check API access and network connectivity
+
+---
