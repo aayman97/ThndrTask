@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="806dp"
+        android:layout_height="545dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="69dp"
+        app:srcCompat="@drawable/nasdaq_logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="605dp"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="75dp"
+        android:text="Developed by Ahmed Ayman"
+        android:textAlignment="center"
+        android:textColor="#090101"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+</RelativeLayout>
